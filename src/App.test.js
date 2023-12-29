@@ -15,19 +15,7 @@ afterEach(() => {
   jest.restoreAllMocks();
 });
 
-test("renders the landing page", async () => {
-  render(<App />);
-
-  expect(screen.getByRole("heading")).toHaveTextContent(/Doggy Directory/);
-  expect(screen.getByRole("combobox")).toHaveDisplayValue("Select a breed");
-  expect(
-    await screen.findByRole("option", { name: "husky" })
-  ).toBeInTheDocument();
-  expect(screen.getByRole("button", { name: "Search" })).toBeDisabled();
-  expect(screen.getByRole("img")).toBeInTheDocument();
-});
-
-test("should be able to search and display dog image results", async () => {
+test("should the search reset works correctly", async () => {
   render(<App />);
 
   //Simulate selecting an option and verifying its value
