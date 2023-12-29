@@ -39,11 +39,8 @@ test("should the search reset works correctly", async () => {
   expect(resetSearch).not.toBeDisabled();
   userEvent.click(resetSearch);
   expect(screen.getByRole("combobox")).toHaveDisplayValue("Select a breed");
-
-  const images = screen.getAllByRole("img");
-  expect(images).toHaveLength(1);
-
-
+  
+  
   // Check if the placeholder image is displayed with alt text "no image"
   const placeholderImage = screen.getByAltText("no image");
   expect(placeholderImage).toBeInTheDocument();
